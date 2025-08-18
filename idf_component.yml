@@ -12,4 +12,3 @@ files:
   - build*/**/*
   - '**/*.zip'
 url: https://github.com/vinimichel/ubxlib.git
-version: master
