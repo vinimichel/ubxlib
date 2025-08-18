@@ -1,16 +1,10 @@
-version: "1.0.0"
-url: https://github.com/vinimichel/ubxlib.git
 path: port/platform/esp-idf/mcu/esp32/components/ubxlib
 dependencies:
   idf: '>=4.3'
-description: ESP-ubxlib component to communicate with ubxlox m10s max.
+description: Ubxlib to communicate with ubxlox m10s max.
 files:
   exclude:
   - docs/**/*
   - docs
   - test/**/*
-  - test
-  - arch
-  - arch/**/*
-  - build*/**/*
-  - '**/*.zip'
+
