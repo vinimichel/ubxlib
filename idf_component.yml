@@ -1,0 +1,15 @@
+dependencies:
+  idf: '>=4.3'
+description: ESP-ubxlib component to communicate with ubxlox m10s max.
+files:
+  exclude:
+  - docs/**/*
+  - docs
+  - test/**/*
+  - test
+  - arch
+  - arch/**/*
+  - build*/**/*
+  - '**/*.zip'
+url: https://github.com/vinimichel/ubxlib.git
+version: master
