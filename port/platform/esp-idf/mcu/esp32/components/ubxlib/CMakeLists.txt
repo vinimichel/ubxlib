@@ -6,7 +6,7 @@ set(ENV{UBXLIB_BASE} ${UBXLIB_BASE})
 
 # Set the ubxlib features if the user hasn't
 if (NOT DEFINED UBXLIB_FEATURES)
-   set(UBXLIB_FEATURES short_range cell gnss)
+   set(UBXLIB_FEATURES gnss)
 endif()
 
 if (geodesic IN_LIST UBXLIB_FEATURES)
@@ -59,6 +59,7 @@ list(APPEND UBXLIB_PRIVATE_INC
 set(COMPONENT_ADD_INCLUDEDIRS
     ${UBXLIB_INC}
 )
+
 set(COMPONENT_SRCS
     ${PLATFORM_DIR}/src/u_port.c
     ${PLATFORM_DIR}/src/u_port_debug.c
@@ -73,19 +74,27 @@ set(COMPONENT_SRCS
     ${PLATFORM_DIR}/../../u_port_timezone.c
     ${UBXLIB_SRC}
 )
+
+# After you set(COMPONENT_SRCS ...)
+message(STATUS "COMPONENT_SRCS:")
+foreach(src ${COMPONENT_SRCS})
+    message(STATUS "  ${src}")
+endforeach()
+
+
 set(COMPONENT_PRIV_INCLUDEDIRS
     ${UBXLIB_PRIVATE_INC}
 )
 
 # Add the platform-specific tests and examples
-list(APPEND UBXLIB_TEST_SRC
-    ${PLATFORM_DIR}/test/u_espidf_ppp_test.c
-    ${UBXLIB_BASE}/example/sockets/main_ppp_espidf.c
-)
+# list(APPEND UBXLIB_TEST_SRC
+#     ${PLATFORM_DIR}/test/u_espidf_ppp_test.c
+#     ${UBXLIB_BASE}/example/sockets/main_ppp_espidf.c
+# )
 
 # Export these variables to parent so they can be picked up by ubxlib_runner
-set(UBXLIB_TEST_SRC ${UBXLIB_TEST_SRC} PARENT_SCOPE)
-set(UBXLIB_TEST_INC ${UBXLIB_TEST_INC} PARENT_SCOPE)
+# set(UBXLIB_TEST_SRC ${UBXLIB_TEST_SRC} PARENT_SCOPE)
+# set(UBXLIB_TEST_INC ${UBXLIB_TEST_INC} PARENT_SCOPE)
 set(UBXLIB_INC ${UBXLIB_INC} PARENT_SCOPE)
 set(UBXLIB_PRIVATE_INC ${UBXLIB_PRIVATE_INC} PARENT_SCOPE)
 set(UBXLIB_BASE ${UBXLIB_BASE} PARENT_SCOPE)
@@ -95,6 +104,12 @@ set(UBXLIB_BASE ${UBXLIB_BASE} PARENT_SCOPE)
 set(COMPONENT_REQUIRES "driver" "esp_timer" "esp_system" "esp_netif" ${UBXLIB_EXTRA_LIBS})
 
 message("COMPONENT_REQUIRES for component UBXLIB is ${COMPONENT_REQUIRES}")
+
+if(DEFINED GEODESIC_COMPONENT)
+    message(STATUS "GEODESIC_COMPONENT is set to: ${GEODESIC_COMPONENT}")
+else()
+    message(STATUS "GEODESIC_COMPONENT is NOT set")
+endif()
 
 register_component()
 

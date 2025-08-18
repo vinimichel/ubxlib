@@ -101,16 +101,26 @@ u_add_module_dir(base ${UBXLIB_BASE}/common/error)
 u_add_module_dir(base ${UBXLIB_BASE}/common/assert)
 u_add_module_dir(base ${UBXLIB_BASE}/common/timeout)
 u_add_module_dir(base ${UBXLIB_BASE}/common/location)
-u_add_module_dir(base ${UBXLIB_BASE}/common/mqtt_client)
-u_add_module_dir(base ${UBXLIB_BASE}/common/http_client)
-u_add_module_dir(base ${UBXLIB_BASE}/common/security)
+# u_add_module_dir(base ${UBXLIB_BASE}/common/mqtt_client)
+# u_add_module_dir(base ${UBXLIB_BASE}/common/http_client)
+# u_add_module_dir(base ${UBXLIB_BASE}/common/security)
 u_add_module_dir(base ${UBXLIB_BASE}/common/sock)
 u_add_module_dir(base ${UBXLIB_BASE}/common/ubx_protocol)
-u_add_module_dir(base ${UBXLIB_BASE}/common/spartn)
+#u_add_module_dir(base ${UBXLIB_BASE}/common/spartn)
 u_add_module_dir(base ${UBXLIB_BASE}/common/utils)
-u_add_module_dir(base ${UBXLIB_BASE}/common/dns)
+# u_add_module_dir(base ${UBXLIB_BASE}/common/dns)
 u_add_module_dir(base ${UBXLIB_BASE}/common/geofence)
 u_add_module_dir(base ${UBXLIB_BASE}/port/platform/common/debug_utils)
+
+list(APPEND UBXLIB_INC
+  ${UBXLIB_BASE}/common/dns/api
+  ${UBXLIB_BASE}/common/spartn/api
+  ${UBXLIB_BASE}/common/mqtt_client/api
+  ${UBXLIB_BASE}/common/http_client/api
+  ${UBXLIB_BASE}/common/security/api
+  ${UBXLIB_BASE}/common/sock/api
+)
+
 
 # Additional source directories
 u_add_source_dir(base ${UBXLIB_BASE}/port/platform/common/event_queue)
