@@ -9,8 +9,4 @@ files:
   - test/**/*
   - zephyr
   - zephyr/**/*
-  - example
-  - example/**/*
-  - readme_images
-  - readme_images/**/*
 
