@@ -11,8 +11,6 @@ files:
   - zephyr/**/*
   - example
   - example/**/*
-  - wifi
-  - wifi/**/*
   - readme_images
   - readme_images/**/*
 
