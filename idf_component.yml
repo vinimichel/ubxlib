@@ -8,6 +8,11 @@ files:
   - docs
   - test/**/*
   - zephyr
+  - zephyr/**/*
   - example
+  - example/**/*
+  - wifi
+  - wifi/**/*
   - readme_images
+  - readme_images/**/*
 
