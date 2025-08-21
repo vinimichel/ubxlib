@@ -3,6 +3,7 @@ dependencies:
   idf: '>=4.3'
 description: Ubxlib to communicate with ubxlox m10s max.
 files:
+  use_gitignore: true
   exclude:
   - docs/**/*
   - docs
