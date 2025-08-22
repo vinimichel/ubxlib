@@ -112,14 +112,6 @@ u_add_module_dir(base ${UBXLIB_BASE}/common/dns)
 u_add_module_dir(base ${UBXLIB_BASE}/common/geofence)
 u_add_module_dir(base ${UBXLIB_BASE}/port/platform/common/debug_utils)
 
-list(APPEND UBXLIB_INC
-  ${UBXLIB_BASE}/common/dns/api
-  ${UBXLIB_BASE}/common/spartn/api
-  ${UBXLIB_BASE}/common/mqtt_client/api
-  ${UBXLIB_BASE}/common/http_client/api
-  ${UBXLIB_BASE}/common/security/api
-  ${UBXLIB_BASE}/common/sock/api
-)
 
 
 # Additional source directories
